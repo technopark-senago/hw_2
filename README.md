@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/technopark-senago/hw_2/branch/develop/graph/badge.svg?token=RI3E6LSV3U)](https://codecov.io/gh/technopark-senago/hw_2)
+
 # Индивидуальное задание №2
 **Выполнил: Оганес Мирзоян**
 
