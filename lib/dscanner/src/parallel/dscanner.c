@@ -44,7 +44,7 @@ err_t dscanner_setup(dscanner_t* dscanner) {
   }
 
   int amount_of_cores = sysconf(_SC_NPROCESSORS_ONLN);
-  dscanner->fds = calloc(2 * amount_of_cores, sizeof(dscanner->fds));
+  dscanner->fds = calloc(2 * amount_of_cores, sizeof(*dscanner->fds));
   if (dscanner->fds == NULL) {
     return ERR_MEMORY_ALLOCATION;
   }

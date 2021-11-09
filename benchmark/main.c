@@ -31,25 +31,25 @@ err_t run(const char* dir_path, const char* word, double* elapsed_time) {
   }
 
   dscanner_free(dscanner);
-
   *elapsed_time = (stop.tv_sec - start.tv_sec) + (stop.tv_nsec - start.tv_nsec) / 1e9;
+
   return ERR_NIL;
 }
 
 int main(int argc, char* argv[]) {
   if (argc < 3) {
     fprintf(stderr, "Invalid input: [directory path] and [word] are expected\n");
-    return -1;
+    return ERR_INVALID_INPUT;
   }
 
   size_t amount_of_scans = 3;
-  double elapsed_time = 0;
   double total_elapsed_time = 0;
+
   for (size_t i = 0; i < amount_of_scans; ++i) {
+    double elapsed_time = 0;
     err_t err = run(argv[1], argv[2], &elapsed_time);
     if (err != ERR_NIL) {
-      fprintf(stderr, "Scanning failed with the error code: [%d]\n", err);
-      return -1;
+      return err;
     }
     total_elapsed_time += elapsed_time;
   }

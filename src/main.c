@@ -9,7 +9,7 @@
 int main(int argc, char* argv[]) {
   if (argc < 3) {
     fprintf(stderr, "Invalid input: [directory path] and [word] are expected\n");
-    return -1;
+    return ERR_INVALID_INPUT;
   }
 
   dscanner_t* dscanner = dscanner_create();
@@ -29,8 +29,7 @@ int main(int argc, char* argv[]) {
   err_t err = dscanner_scan(dscanner, argv[1], argv[2]);
   if (err != ERR_NIL) {
     dscanner_free(dscanner);
-    fprintf(stderr, "Scanning failed with the error code: [%d]\n", err);
-    return -1;
+    return err;
   }
 
   if (clock_gettime(CLOCK_REALTIME, &stop) == -1) {

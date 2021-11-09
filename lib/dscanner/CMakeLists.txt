@@ -6,8 +6,8 @@ else()
   set(DSCANNER_TYPE "STATIC")
 endif()
   
-add_library(dscanner ${DSCANNER_TYPE} ${DSCANNER_LIB}/src/dscanner.c)
-target_include_directories(dscanner PUBLIC ${DSCANNER_LIB}/include)
+add_library(dscanner ${DSCANNER_TYPE} src/${DSCANNER_LIB}/dscanner.c)
+target_include_directories(dscanner PUBLIC include)
 target_link_libraries(dscanner PUBLIC heap fscanner registry errors)
 
 install(

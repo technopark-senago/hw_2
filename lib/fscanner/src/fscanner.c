@@ -13,7 +13,7 @@ static const char* FMODE_READ = "r";
 
 void fscanner_init(fscanner_t* fscanner) {
   fscanner->fptr = NULL;
-  fscanner->buffer = calloc(MAX_WORD_LENGTH, sizeof(fscanner->buffer));
+  fscanner->buffer = calloc(MAX_WORD_LENGTH, sizeof(*fscanner->buffer));
   fscanner->count = 0;
 }
 

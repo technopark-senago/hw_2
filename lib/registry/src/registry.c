@@ -53,7 +53,7 @@ err_t registry_setup(registry_t* registry, const char* dir_path) {
     return err;
   }
 
-  registry->filenames = calloc(registry->number_of_files, sizeof(registry->filenames));
+  registry->filenames = calloc(registry->number_of_files, sizeof(*registry->filenames));
   if (registry->filenames == NULL) {
     return ERR_MEMORY_ALLOCATION;
   }

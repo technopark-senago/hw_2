@@ -11,7 +11,7 @@
 void heap_setup(heap_t* heap, size_t n) {
   heap->size = 0;
   heap->capacity = n;
-  heap->nodes = calloc(n, sizeof(heap->nodes));
+  heap->nodes = calloc(n, sizeof(*heap->nodes));
 }
 
 size_t parent(size_t k) { return (k - 1) / 2; }
