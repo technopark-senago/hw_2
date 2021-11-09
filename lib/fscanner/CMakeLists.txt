@@ -1,0 +1,6 @@
+add_library(fscanner src/fscanner.c)
+target_include_directories(fscanner PUBLIC include)
+target_link_libraries(fscanner PRIVATE utils constants PUBLIC errors)
+if(ENABLE_TESTS)
+    add_subdirectory(tests)
+endif()

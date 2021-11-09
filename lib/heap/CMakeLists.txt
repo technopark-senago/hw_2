@@ -1,0 +1,5 @@
+add_library(heap src/heap.c)
+target_include_directories(heap PUBLIC include)
+if(ENABLE_TESTS)
+    add_subdirectory(tests)
+endif()
