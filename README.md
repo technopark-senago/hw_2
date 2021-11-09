@@ -31,5 +31,5 @@
 ### Параллельный поиск
 ![параллельный поиск](static/media/benchmark-multiprocess.png)
 
-### Размеры файлов
+### Размеры директорий с файлами
 ![размеры файлов](static/media/data_packs.png)
