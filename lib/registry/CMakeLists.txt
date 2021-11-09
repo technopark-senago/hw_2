@@ -1,0 +1,6 @@
+add_library(registry src/registry.c)
+target_include_directories(registry PUBLIC include)
+target_link_libraries(registry PUBLIC utils errors)
+if(ENABLE_TESTS)
+    add_subdirectory(tests)
+endif()

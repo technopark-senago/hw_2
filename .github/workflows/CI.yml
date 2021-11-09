@@ -1,0 +1,24 @@
+name: CI
+
+on: [pull_request]
+
+jobs:
+  actions:
+    runs-on: ubuntu-latest
+    container:
+      image: senago/cpp-toolchain
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: checks
+        run: sh scripts/checks.sh
+      
+      - name: cpplint
+        run: sh scripts/cpplint.sh
+      
+      - name: codecov
+        uses: codecov/codecov-action@v2
+        with:
+          flags: automated
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./build/coverage.xml
